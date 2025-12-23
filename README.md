@@ -1,137 +1,111 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Digital Portfolio – Apps & Tools</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debeatzgh – AI Productivity Hub</title>
 
 <style>
-:root{
-  --primary:#16a34a;
-  --dark:#0f172a;
-  --light:#f8fafc;
-}
-*{box-sizing:border-box;margin:0;padding:0}
+/* ===== BASE ===== */
 body{
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
-  background:var(--light);
-  color:#1e293b;
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont;
+  background:#f3f4f6;
+  color:#111827;
 }
 
-/* Header */
-header{
-  padding:40px 16px;
+/* ===== HERO ===== */
+.hero{
+  padding:60px 20px;
   text-align:center;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:#fff;
 }
-header h1{
-  font-size:clamp(24px,5vw,38px);
-  margin-bottom:10px;
+.hero h1{
+  font-size:2rem;
+  margin-bottom:12px;
 }
-header p{
-  max-width:700px;
+.hero p{
+  max-width:680px;
   margin:auto;
-  opacity:.85;
+  font-size:1rem;
+  opacity:.9;
 }
 
-/* Carousel */
-.carousel-wrap{
-  max-width:1200px;
-  margin:auto;
-  padding:20px 16px 60px;
-  overflow:hidden;
+/* ===== CONTENT ===== */
+.section{
+  max-width:1100px;
+  margin:50px auto;
+  padding:0 16px;
 }
-.carousel{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding-bottom:10px;
-}
-.carousel::-webkit-scrollbar{height:8px}
-.carousel::-webkit-scrollbar-thumb{
-  background:#cbd5e1;
-  border-radius:20px;
-}
-
-/* Card */
 .card{
-  min-width:280px;
-  max-width:320px;
   background:#fff;
   border-radius:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
-  overflow:hidden;
-  scroll-snap-align:start;
-  display:flex;
-  flex-direction:column;
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
+  padding:30px;
+  text-align:center;
 }
-.card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-.card-content{
-  padding:18px;
-  display:flex;
-  flex-direction:column;
-  flex:1;
-}
-.card h3{
-  font-size:18px;
-  margin-bottom:8px;
+.card h2{
+  margin-bottom:10px;
 }
 .card p{
+  font-size:15px;
+  color:#555;
+}
+
+/* ===== FLOATING BUTTON ===== */
+#floating-launcher{
+  position:fixed;
+  bottom:22px;
+  left:20px;
+  background:#16a34a;
+  color:#fff;
+  padding:12px 20px;
   font-size:14px;
-  opacity:.85;
-  flex:1;
-}
-
-/* Buttons */
-.btns{
-  display:flex;
-  gap:10px;
-  margin-top:14px;
-}
-.btn{
-  flex:1;
-  padding:10px;
-  border-radius:20px;
-  font-size:13px;
   font-weight:600;
-  text-align:center;
+  border-radius:24px;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
   cursor:pointer;
-  border:none;
+  z-index:99999;
+  transition:.2s ease;
 }
-.preview{
-  background:var(--dark);
-  color:#fff;
-}
-.install{
-  background:var(--primary);
-  color:#fff;
+#floating-launcher:hover{
+  transform:scale(1.05);
+  opacity:.95;
 }
 
-/* Overlay iframe */
-#overlay{
+/* ===== OVERLAY ===== */
+#launcher-overlay{
   position:fixed;
   inset:0;
   background:#fff;
   display:none;
   flex-direction:column;
-  z-index:99999;
+  z-index:100000;
 }
-#overlay-bar{
-  background:#111;
-  color:#fff;
-  padding:12px;
-  display:flex;
-  justify-content:flex-end;
+
+/* ===== TOP BAR ===== */
+#launcher-top{
+  position:relative;
+  background:#0f172a;
+  height:48px;
 }
-#close{
+
+/* CLOSE BUTTON (TOP LEFT) */
+#launcher-close{
+  position:absolute;
+  top:10px;
+  left:12px;
   cursor:pointer;
   font-size:18px;
+  color:#fff;
+  background:rgba(0,0,0,.35);
+  padding:4px 10px;
+  border-radius:10px;
 }
-#viewer{
+
+/* ===== IFRAME ===== */
+#launcher-frame{
   flex:1;
   width:100%;
   border:none;
@@ -141,104 +115,75 @@ header p{
 
 <body>
 
-<header>
-  <h1>🚀 Digital Apps & Creator Tools</h1>
-  <p>A professional portfolio showcasing productivity apps, AI platforms, side-hustle tools, and digital solutions for creators, entrepreneurs, and online builders.</p>
-</header>
+<!-- HERO -->
+<section class="hero">
+  <h1>AI Productivity Web App</h1>
+  <p>
+    A smart digital workspace for creators, entrepreneurs, and hustlers to
+    improve productivity using AI-powered tools and ideas.
+  </p>
+</section>
 
-<section class="carousel-wrap">
-  <div class="carousel">
-
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/07/imagine_14268752983581284557979788324544592.jpg">
-      <div class="card-content">
-        <h3>SocialCreator TechShop</h3>
-        <p>Dynamic platform packed with AI tools, productivity ideas, and smart digital solutions for creators and entrepreneurs.</p>
-        <div class="btns">
-          <button class="btn preview" onclick="openPreview('https://www.socialcreator.com/techshop')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://www.socialcreator.com/techshop')">Install</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="card">
-      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/12/1763148379311_1619032177476517720.jpg">
-      <div class="card-content">
-        <h3>Lifestyle & Productivity Hub</h3>
-        <p>All-in-one lifestyle and productivity app giving you tools, ideas, and resources you need online in one place.</p>
-        <div class="btns">
-          <button class="btn preview" onclick="openPreview('https://www.appcreator24.com/app3221514-9n1p8c')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://www.appcreator24.com/app3221514-9n1p8c')">Install</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/wp-17550753355015215823208011315422.jpg">
-      <div class="card-content">
-        <h3>Collaborators Hub</h3>
-        <p>A shared workspace for collaboration, project contribution, and community-driven digital creation.</p>
-        <div class="btns">
-          <button class="btn preview" onclick="openPreview('https://debeatzgh1.github.io/Debeatzgh-Collaborators-Hub/')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://debeatzgh1.github.io/Debeatzgh-Collaborators-Hub/')">Install</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="card">
-      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/minimalistbusinessiconthemealaptopwithdollarsignsorgrowtharrows4197483127374475983.jpg">
-      <div class="card-content">
-        <h3>SideHustleGenie</h3>
-        <p>Your ultimate hub for AI-powered and traditional income ideas tailored for students, workers, and entrepreneurs.</p>
-        <div class="btns">
-          <button class="btn preview" onclick="openPreview('https://www.socialcreator.com/sidehustle')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://www.socialcreator.com/sidehustle')">Install</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="card">
-      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/09/asleekandmoderngoogleclassroombannerfortechaihubfeaturingfuturisticdigitalelements261807892942313727.jpg">
-      <div class="card-content">
-        <h3>AI Knowledge Hub</h3>
-        <p>An accessible guide to AI exploring its benefits, challenges, real-world applications, and impact on daily life.</p>
-        <div class="btns">
-          <button class="btn preview" onclick="openPreview('https://www.socialcreator.com/digitalstore')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://www.socialcreator.com/digitalstore')">Install</button>
-        </div>
-      </div>
-    </div>
-
+<!-- CONTENT -->
+<section class="section">
+  <div class="card">
+    <h2>Improve Productivity with AI</h2>
+    <p>
+      Launch the full web application instantly using the floating button.
+      You can close it anytime and your last open state will be remembered.
+    </p>
   </div>
 </section>
 
-<!-- Iframe Overlay -->
-<div id="overlay">
-  <div id="overlay-bar">
-    <span id="close" onclick="closePreview()">✖ Close</span>
+<!-- FLOATING LAUNCHER -->
+<div id="floating-launcher">Web</div>
+
+<!-- FULLSCREEN OVERLAY -->
+<div id="launcher-overlay">
+  <div id="launcher-top">
+    <span id="launcher-close">✖</span>
   </div>
-  <iframe id="viewer"
-    sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
-  </iframe>
+  <iframe
+    id="launcher-frame"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+  ></iframe>
 </div>
 
+<!-- SCRIPT -->
 <script>
-function openPreview(url){
-  document.getElementById("overlay").style.display="flex";
-  document.getElementById("viewer").src=url;
-}
-function closePreview(){
-  document.getElementById("overlay").style.display="none";
-  document.getElementById("viewer").src="";
-}
-function openInstall(url){
-  window.open(url,"_blank");
-}
+(function(){
+
+  var launcher = document.getElementById("floating-launcher");
+  var overlay  = document.getElementById("launcher-overlay");
+  var frame    = document.getElementById("launcher-frame");
+  var closeBtn = document.getElementById("launcher-close");
+
+  var APP_URL = "https://debeatzgh1.github.io/Improve-productivity-with-AI-Web-App-project-/";
+  var STORAGE_KEY = "ai_productivity_launcher_open";
+
+  function openLauncher(){
+    overlay.style.display = "flex";
+    frame.src = APP_URL;
+    localStorage.setItem(STORAGE_KEY,"open");
+  }
+
+  function closeLauncher(){
+    overlay.style.display = "none";
+    frame.src = "";
+    localStorage.removeItem(STORAGE_KEY);
+  }
+
+  launcher.addEventListener("click", openLauncher);
+  closeBtn.addEventListener("click", closeLauncher);
+
+  /* Restore last state */
+  window.addEventListener("load", function(){
+    if(localStorage.getItem(STORAGE_KEY)==="open"){
+      openLauncher();
+    }
+  });
+
+})();
 </script>
 
 </body>
