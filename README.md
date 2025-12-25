@@ -186,7 +186,7 @@ header p{
         <p>All-in-one creator bio link featuring apps, projects, social profiles, and offers.</p>
         <div class="btns">
           <button class="btn preview" onclick="openPreview('https://msha.ke/debeatzgh')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://msha.ke/debeatzgh')">Open</button>
+          <button class="btn install" onclick="openInstall('[https://debeatzgh1.github.io/Home-/](https://debeatzgh1.github.io/Home-/')">Open</button>
         </div>
       </div>
     </div>
