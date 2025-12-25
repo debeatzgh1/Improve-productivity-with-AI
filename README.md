@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,16 +12,12 @@
   --light:#f8fafc;
   --badge:#f59e0b;
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   background:var(--light);
   color:#1e293b;
 }
-
-/* Header */
 header{
   padding:40px 16px;
   text-align:center;
@@ -34,8 +31,6 @@ header p{
   margin:auto;
   opacity:.85;
 }
-
-/* Carousel */
 .carousel-wrap{
   max-width:1200px;
   margin:auto;
@@ -46,15 +41,12 @@ header p{
   gap:20px;
   overflow-x:auto;
   scroll-snap-type:x mandatory;
-  padding-bottom:10px;
 }
 .carousel::-webkit-scrollbar{height:8px}
 .carousel::-webkit-scrollbar-thumb{
   background:#cbd5e1;
   border-radius:20px;
 }
-
-/* Card */
 .card{
   min-width:280px;
   max-width:320px;
@@ -67,8 +59,6 @@ header p{
   flex-direction:column;
   position:relative;
 }
-
-/* Popular Badge */
 .badge{
   position:absolute;
   top:14px;
@@ -80,15 +70,12 @@ header p{
   padding:6px 12px;
   border-radius:999px;
   z-index:2;
-  box-shadow:0 6px 15px rgba(0,0,0,.15);
 }
-
 .card img{
   width:100%;
   height:180px;
   object-fit:cover;
 }
-
 .card-content{
   padding:18px;
   display:flex;
@@ -104,8 +91,6 @@ header p{
   opacity:.85;
   flex:1;
 }
-
-/* Buttons */
 .btns{
   display:flex;
   gap:10px;
@@ -120,16 +105,8 @@ header p{
   cursor:pointer;
   border:none;
 }
-.preview{
-  background:var(--dark);
-  color:#fff;
-}
-.install{
-  background:var(--primary);
-  color:#fff;
-}
-
-/* Overlay */
+.preview{background:var(--dark);color:#fff}
+.install{background:var(--primary);color:#fff}
 #overlay{
   position:fixed;
   inset:0;
@@ -137,8 +114,6 @@ header p{
   display:none;
   z-index:99999;
 }
-
-/* Overlay Controls */
 .overlay-controls{
   position:fixed;
   top:12px;
@@ -156,8 +131,6 @@ header p{
   cursor:pointer;
   border:none;
 }
-
-/* Iframe */
 #viewer{
   width:100%;
   height:100%;
@@ -170,7 +143,7 @@ header p{
 
 <header>
   <h1>🚀 SocialCreator Apps Hub</h1>
-  <p>Explore popular AI tools, side-hustle platforms, and creator resources from SocialCreator.</p>
+  <p>Explore popular AI tools, digital products, side-hustle platforms, and creator resources.</p>
 </header>
 
 <section class="carousel-wrap">
@@ -190,13 +163,13 @@ header p{
       </div>
     </div>
 
-    <!-- SideHustle -->
+    <!-- SideHustle Hub -->
     <div class="card">
       <span class="badge">POPULAR</span>
       <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/minimalistbusinessiconthemealaptopwithdollarsignsorgrowtharrows4197483127374475983.jpg">
       <div class="card-content">
         <h3>SideHustle Hub</h3>
-        <p>AI-powered and traditional income ideas for students and entrepreneurs.</p>
+        <p>Proven income ideas, online business tools, and AI-powered monetization.</p>
         <div class="btns">
           <button class="btn preview" onclick="openPreview('https://www.socialcreator.com/sidehustle')">Preview</button>
           <button class="btn install" onclick="openInstall('https://www.socialcreator.com/sidehustle')">Open</button>
@@ -204,29 +177,30 @@ header p{
       </div>
     </div>
 
-    <!-- Digital Store -->
+    <!-- Debeatzgh Smart Links -->
     <div class="card">
-      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/09/asleekandmoderngoogleclassroombannerfortechaihubfeaturingfuturisticdigitalelements261807892942313727.jpg">
+      <span class="badge">CREATOR HUB</span>
+      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/wp-17550753355015215823208011315422.jpg">
       <div class="card-content">
-        <h3>Digital Store</h3>
-        <p>Premium digital products, templates, and creator tools.</p>
+        <h3>Debeatzgh Smart Links</h3>
+        <p>All-in-one creator bio link featuring apps, projects, social profiles, and offers.</p>
         <div class="btns">
-          <button class="btn preview" onclick="openPreview('https://www.socialcreator.com/digitalstore')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://www.socialcreator.com/digitalstore')">Open</button>
+          <button class="btn preview" onclick="openPreview('https://msha.ke/debeatzgh')">Preview</button>
+          <button class="btn install" onclick="openInstall('https://msha.ke/debeatzgh')">Open</button>
         </div>
       </div>
     </div>
 
-    <!-- AI Tools -->
+    <!-- MB Online -->
     <div class="card">
       <span class="badge">POPULAR</span>
-      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/wp-17550753355015215823208011315422.jpg">
+      <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/09/asleekandmoderngoogleclassroombannerfortechaihubfeaturingfuturisticdigitalelements261807892942313727.jpg">
       <div class="card-content">
-        <h3>AI Tools Hub</h3>
-        <p>AI prompts, automation tools, and productivity boosters.</p>
+        <h3>MB Online Store</h3>
+        <p>Digital products, affiliate tools, online income resources, and creator deals.</p>
         <div class="btns">
-          <button class="btn preview" onclick="openPreview('https://www.socialcreator.com/ai')">Preview</button>
-          <button class="btn install" onclick="openInstall('https://www.socialcreator.com/ai')">Open</button>
+          <button class="btn preview" onclick="openPreview('https://debeatzgh1.github.io/MB--online-/')">Preview</button>
+          <button class="btn install" onclick="openInstall('https://debeatzgh1.github.io/MB--online-/')">Open</button>
         </div>
       </div>
     </div>
@@ -234,53 +208,37 @@ header p{
   </div>
 </section>
 
-<!-- Overlay -->
 <div id="overlay">
   <div class="overlay-controls">
     <button class="ctrl-btn" onclick="closePreview()">✖ Close</button>
     <button class="ctrl-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
   </div>
-
-  <iframe id="viewer"
-    sandbox="allow-scripts allow-same-origin allow-forms allow-popups">
-  </iframe>
+  <iframe id="viewer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
 </div>
 
 <script>
 const STORAGE_KEY = "lastOpenedSocialCreatorApp";
 
 function openPreview(url){
-  const overlay = document.getElementById("overlay");
-  const viewer = document.getElementById("viewer");
-
   viewer.src = url;
   overlay.style.display = "block";
   localStorage.setItem(STORAGE_KEY, url);
 }
-
 function closePreview(){
-  const overlay = document.getElementById("overlay");
-  const viewer = document.getElementById("viewer");
-
   viewer.src = "";
   overlay.style.display = "none";
   localStorage.removeItem(STORAGE_KEY);
 }
-
 function toggleFullscreen(){
-  const iframe = document.getElementById("viewer");
-
   if (!document.fullscreenElement) {
-    iframe.requestFullscreen().catch(()=>{});
+    viewer.requestFullscreen().catch(()=>{});
   } else {
     document.exitFullscreen();
   }
 }
-
 function openInstall(url){
   window.open(url, "_blank");
 }
-
 window.addEventListener("load", () => {
   const last = localStorage.getItem(STORAGE_KEY);
   if (last) openPreview(last);
